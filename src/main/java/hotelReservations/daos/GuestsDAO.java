@@ -18,6 +18,7 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
     private static final String CREATE_GUEST_SQL_QUERY = "INSERT INTO guests (First_Name, Last_Name, Email, Phone) VALUES (?, ?, ?, ?)";
     private static final String UPDATE_GUEST_SQL_QUERY = "UPDATE guests SET First_Name = ?, Last_Name = ?, Email = ?, Phone = ? WHERE Guest_ID=?";
     private static final String DELETE_GUEST_SQL_QUERY = "DELETE FROM guests WHERE Guest_ID = ?";
+    private static GuestsDAO instance;
 
     Logger logger = LogManager.getLogger(GuestsDAO.class.getName());
 
@@ -119,6 +120,13 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
             //throw new RuntimeException(e);
             logger.error(e.getMessage());
         }
+    }
+
+    public static GuestsDAO getInstance(){
+        if(instance == null){
+            instance = new GuestsDAO();
+        }
+        return instance;
     }
 
 
