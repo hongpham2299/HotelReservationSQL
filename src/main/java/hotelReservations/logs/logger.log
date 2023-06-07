@@ -13,3 +13,22 @@
 , Customers {guestID=13, firstName='Mai', lastName='Kim', email='kmai@gmail.com', phone='(813) 238-0958'}
 , Customers {guestID=15, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
 ]
+2023-06-06 22:09:14,204 INFO h.Main [main] Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='null', phone='null'}
+
+2023-06-06 22:22:06,323 INFO h.Main [main] Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='null', phone='null'}
+
+2023-06-06 22:22:06,390 INFO h.d.GuestsDAO [main] Guest ID: 16 -> delete successfully
+2023-06-06 22:22:06,414 INFO h.d.GuestsDAO [main] Guest First Name: Young -> Created successfully!
+2023-06-06 22:22:06,457 INFO h.d.GuestsDAO [main] Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
+-> Updated successfully!
+2023-06-06 22:22:06,476 INFO h.Main [main] [Customers {guestID=1, firstName='Carine', lastName='Schmitt', email='Carine@gmail.com', phone='(407) 642-7555'}
+, Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='PeterF@gmail.com', phone='null'}
+, Customers {guestID=4, firstName='Alex', lastName='Williams', email='alex.williams@petsmart.com', phone='null'}
+, Customers {guestID=5, firstName='Julie', lastName='Murphy', email='Julie@yahoo.com', phone='(212) 315-7818'}
+, Customers {guestID=6, firstName='Kwai', lastName='Lee', email='null', phone='(617) 713-8428'}
+, Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
+, Customers {guestID=13, firstName='Mai', lastName='Kim', email='kmai@gmail.com', phone='(813) 238-0958'}
+, Customers {guestID=15, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
+, Customers {guestID=17, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
+]
+2023-06-06 22:22:06,504 INFO h.d.ReservationsDAO [main] Confirmation#: TMWS-4678450 -> Created successfully!
