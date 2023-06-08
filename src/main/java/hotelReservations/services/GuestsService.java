@@ -9,14 +9,14 @@ public class GuestsService {
 
     private GuestsDAO guestsDAO;
 
-    public List<Guests> getAll(){
+    public void getAll(){
         guestsDAO = GuestsDAO.getInstance();
-        return guestsDAO.getAll();
+        guestsDAO.getAll();
     }
 
-    public Guests getByID(int guestID){
+    public void getByID(Guests guests){
         guestsDAO = GuestsDAO.getInstance();
-        return guestsDAO.getByID(guestID);
+        guestsDAO.getByID(guests);
     }
 
     public void create(Guests guest){
