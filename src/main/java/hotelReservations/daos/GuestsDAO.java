@@ -13,8 +13,8 @@ import java.util.List;
 
 public class GuestsDAO implements GenericInterfaceDAO<Guests> {
 
-    private static final String GET_GUEST_BY_ID_SQL_QUERY = "SELECT Guest_ID, First_Name, Last_Name FROM guests WHERE Guest_ID=?";
-    private static final String GET_ALL_GUEST_SQL_QUERY = "SELECT * FROM guests";
+    private static final String GET_BY_ID_SQL_QUERY = "SELECT * FROM guests WHERE Guest_ID=?";
+    private static final String GET_ALL_SQL_QUERY = "SELECT * FROM guests";
     private static final String CREATE_GUEST_SQL_QUERY = "INSERT INTO guests (First_Name, Last_Name, Email, Phone) VALUES (?, ?, ?, ?)";
     private static final String UPDATE_GUEST_SQL_QUERY = "UPDATE guests SET First_Name = ?, Last_Name = ?, Email = ?, Phone = ? WHERE Guest_ID=?";
     private static final String DELETE_GUEST_SQL_QUERY = "DELETE FROM guests WHERE Guest_ID = ?";
@@ -22,48 +22,48 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
 
     Logger logger = LogManager.getLogger(GuestsDAO.class.getName());
 
-    public Guests getByID(int guestID) {
-
-        try (PreparedStatement prepareStatement = DatabaseConnection.getConnection().prepareStatement(GET_GUEST_BY_ID_SQL_QUERY))
-        {
-            prepareStatement.setInt(1, guestID);
-            ResultSet resultSet = prepareStatement.executeQuery();
+    @Override
+    public void getByID(Guests guests) {
+        try (PreparedStatement preparedStatement = DatabaseConnection.getConnection().prepareStatement(GET_BY_ID_SQL_QUERY)) {
+            preparedStatement.setInt(1, guests.getGuestID());
+            ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
-                Guests guests = new Guests();
-                guests.setGuestID(resultSet.getInt("Guest_ID"));
-                guests.setFirstName(resultSet.getString("First_Name"));
-                guests.setLastName(resultSet.getString("Last_Name"));
-                return guests;
+                String firstName = resultSet.getString("First_Name");
+                String lastName = resultSet.getString("Last_Name");
+                String email = resultSet.getString("Email");
+                String phone = resultSet.getString("Phone");
+
+                System.out.println("Guest ID: " + guests.getGuestID() + "\nFirst Name: " + firstName
+                        + "\nLast Name: " + lastName
+                        + "\nEmail: " + email
+                        + "\nPhone: " + phone + "\n-------");
             }
         } catch (SQLException e) {
-            //throw new RuntimeException(e);
-            logger.error(e.getMessage());
+            throw new RuntimeException(e);
         }
-        return null;
     }
 
-    public List<Guests> getAll(){
-        List<Guests> guestsList = new ArrayList<>();
+    @Override
+    public void getAll() {
+        try (PreparedStatement preparedStatement = DatabaseConnection.getConnection().prepareStatement(GET_ALL_SQL_QUERY)) {
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-        try (PreparedStatement prepareStatement = DatabaseConnection.getConnection().prepareStatement(GET_ALL_GUEST_SQL_QUERY);
-             ResultSet resultSet = prepareStatement.executeQuery())
-        {
             while (resultSet.next()){
-                Guests guests = new Guests();
-                guests.setGuestID(resultSet.getInt("Guest_ID"));
-                guests.setFirstName(resultSet.getString("First_Name"));
-                guests.setLastName(resultSet.getString("Last_Name"));
-                guests.setEmail(resultSet.getString("Email"));
-                guests.setPhone(resultSet.getString("Phone"));
+                int guestId = resultSet.getInt(1);
+                String firstName = resultSet.getString(2);
+                String lastName = resultSet.getString(3);
+                String email = resultSet.getString(4);
+                String phone = resultSet.getString(5);
 
-                guestsList.add(guests);
+                System.out.println("Guest ID: " + guestId + "\nFirst Name: " + firstName
+                        + "\nLast Name: " + lastName
+                        + "\nEmail: " + email
+                        + "\nPhone: " + phone + "\n-------");
             }
         } catch (SQLException e) {
-            //throw new RuntimeException(e);
-            logger.error(e.getMessage());
+            throw new RuntimeException(e);
         }
-        return guestsList;
     }
 
     @Override
@@ -98,7 +98,7 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
 
             int rowUpdated = preparedStatement.executeUpdate();
             if(rowUpdated > 0) {
-                logger.info(guest + "-> Updated successfully!");
+                logger.info("Guest ID " + guest.getGuestID() + "-> Updated successfully!");
             }
         } catch (SQLException e) {
             //throw new RuntimeException(e);
@@ -114,7 +114,7 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
 
             int rowDeleted = preparedStatement.executeUpdate();
             if(rowDeleted > 0){
-                logger.info("Guest ID: " + guest.getGuestID() + " -> delete successfully");
+                logger.info("Guest ID: " + guest.getGuestID() + " -> Delete Successfully");
             }
         } catch (SQLException e) {
             //throw new RuntimeException(e);
@@ -128,8 +128,6 @@ public class GuestsDAO implements GenericInterfaceDAO<Guests> {
         }
         return instance;
     }
-
-
 
 }
 
