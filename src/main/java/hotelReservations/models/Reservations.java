@@ -7,11 +7,23 @@ public class Reservations {
     private String confirmationNumber;
     private Date arrivalDate;
     private Date departureDate;
-    private int guestID;
-    private String roomTypeID;
-    private String hotelID;
+    private RoomType roomType;
+    private Hotel hotel;
+    private Guests guests;
     private BookingReservationMethods bookingReservationMethods;
 
+    public Reservations(){}
+
+    public Reservations(String confirmationNumber, Date arrivalDate, Date departureDate, RoomType roomType,
+                        Hotel hotel, Guests guests, BookingReservationMethods bookingReservationMethods) {
+        this.confirmationNumber = confirmationNumber;
+        this.arrivalDate = arrivalDate;
+        this.departureDate = departureDate;
+        this.roomType = roomType;
+        this.hotel = hotel;
+        this.guests = guests;
+        this.bookingReservationMethods = bookingReservationMethods;
+    }
 
     public String getConfirmationNumber() {
         return confirmationNumber;
@@ -37,28 +49,20 @@ public class Reservations {
         this.departureDate = departureDate;
     }
 
-    public int getGuestID() {
-        return guestID;
+    public Guests getGuests() {
+        return guests;
     }
 
-    public void setGuestID(int guestID) {
-        this.guestID = guestID;
+    public void setGuests(Guests guests) {
+        this.guests = guests;
     }
 
-    public String getRoomTypeID() {
-        return roomTypeID;
+    public RoomType getRoomType() {
+        return roomType;
     }
 
-    public void setRoomTypeID(String roomTypeID) {
-        this.roomTypeID = roomTypeID;
-    }
-
-    public String getHotelID() {
-        return hotelID;
-    }
-
-    public void setHotelID(String hotelID) {
-        this.hotelID = hotelID;
+    public void setRoomType(RoomType roomType) {
+        this.roomType = roomType;
     }
 
     public BookingReservationMethods getBookingReservationMethods() {
@@ -69,15 +73,20 @@ public class Reservations {
         this.bookingReservationMethods = bookingReservationMethods;
     }
 
+    public Hotel getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
+    }
+
     @Override
     public String toString() {
         return "Reservations{" +
                 "confirmationNumber='" + confirmationNumber + '\'' +
                 ", arrivalDate=" + arrivalDate +
                 ", departureDate=" + departureDate +
-                ", guestID=" + guestID +
-                ", roomTypeID='" + roomTypeID + '\'' +
-                ", hotelID='" + hotelID + '\'' +
                 ", bookingReservationMethods=" + bookingReservationMethods +
                 '}';
     }
