@@ -1,59 +1,67 @@
 package hotelReservations;
 
-import hotelReservations.daos.GuestsDAO;
-import hotelReservations.daos.ReservationsDAO;
-import hotelReservations.models.BookingReservationMethods;
-import hotelReservations.models.Guests;
-import hotelReservations.models.Reservations;
+import hotelReservations.daos.*;
+import hotelReservations.models.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Logger logger = LogManager.getLogger(Main.class.getName());
-
         GuestsDAO guestsDAO = new GuestsDAO();
 
-        Guests guestsByID = guestsDAO.getByID(2);
-        logger.info(guestsByID);
+        Guests guest = new Guests();
+        guest.setGuestID(5);
+        guestsDAO.getByID(guest);
 
-        Guests guestDelete = guestsDAO.getByID(16);
-        guestsDAO.delete(guestDelete);
-
-        Guests guests = new Guests("Young", "Kim", "ykim@gmail.com", "(813) 258-0158");
+        Guests guests = new Guests("Mario", "Diaz", "mario156@gmail.com", "(813) 150-5118");
         guestsDAO.create(guests);
 
-        Guests updateGuestInfo = guestsDAO.getByID(7);
-        updateGuestInfo.setFirstName("Alice");
-        updateGuestInfo.setLastName("Jeane");
-        updateGuestInfo.setEmail("Alice@gmail.com");
-        updateGuestInfo.setPhone("(850) 456-2316");
+        Guests guestDelete = new Guests();
+        guestDelete.setGuestID(20);
+        guestsDAO.delete(guestDelete);
+
+        Guests updateGuestInfo = new Guests();
+        updateGuestInfo.setGuestID(15);
+        updateGuestInfo.setFirstName("Dung");
+        updateGuestInfo.setLastName("Phan");
+        updateGuestInfo.setEmail("dunphan56@yahoo.com");
+        updateGuestInfo.setPhone("(578) 246-8911");
         guestsDAO.update(updateGuestInfo);
 
-        List<Guests> allGuests = guestsDAO.getAll();
-        logger.info(allGuests);
+        guestsDAO.getAll();
 
         ReservationsDAO reservationsDAO = new ReservationsDAO();
 
         Reservations reservation = new Reservations();
-        BookingReservationMethods bookingMethods = new BookingReservationMethods();
-        bookingMethods.setBookingMethodID(100);
-        reservation.setBookingReservationMethods(bookingMethods);
+        reservation.setConfirmationNumber("TMWS-1587923");
+        reservationsDAO.getByID(reservation);
 
-        reservation.setConfirmationNumber("TMWS-4678450");
-        reservation.setArrivalDate(Date.valueOf("2023-10-12"));
-        reservation.setDepartureDate(Date.valueOf("2023-10-15"));
-        reservation.setGuestID(1);
-        reservation.setRoomTypeID("SK");
-        reservation.setHotelID("TMWS");
-        reservationsDAO.create(reservation);
+        Guests guest1 = new Guests();
+        guest1.setGuestID(2);
 
+        RoomType roomType = new RoomType();
+        roomType.setRoomTypeID("SQQ");
 
+        BookingReservationMethods bookingMethod = new BookingReservationMethods();
+        bookingMethod.setBookingMethodID(100);
+
+        Reservations updateRes = new Reservations();
+        updateRes.setConfirmationNumber("TMWS-7894561");
+        updateRes.setArrivalDate(Date.valueOf("2023-09-11"));
+        updateRes.setDepartureDate(Date.valueOf("2023-09-15"));
+        updateRes.setGuests(guest1);
+        updateRes.setRoomType(roomType);
+        updateRes.setBookingReservationMethods(bookingMethod);
+        reservationsDAO.update(updateRes);
+
+        reservationsDAO.getAll();
 
     }
 }
