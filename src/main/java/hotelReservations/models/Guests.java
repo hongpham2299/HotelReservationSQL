@@ -10,8 +10,8 @@ public class Guests {
     private String lastName;
     private String email;
     private String phone;
-
     private List<Reservations> reservationsList = new ArrayList<>();
+    private List<CancelledReservations> cancelledReservationsList = new ArrayList<>();
 
     public Guests(){}
 
@@ -68,6 +68,14 @@ public class Guests {
 
     public void setReservationsList(List<Reservations> reservationsList) {
         this.reservationsList = reservationsList;
+    }
+
+    public List<CancelledReservations> getCancelledReservationsList() {
+        return cancelledReservationsList;
+    }
+
+    public void setCancelledReservationsList(List<CancelledReservations> cancelledReservationsList) {
+        this.cancelledReservationsList = cancelledReservationsList;
     }
 
     @Override
