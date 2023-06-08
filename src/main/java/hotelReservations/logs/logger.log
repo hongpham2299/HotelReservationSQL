@@ -1,34 +1,119 @@
-2023-06-05 19:05:14,608 INFO h.Main [main] Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='null', phone='null'}
-
-2023-06-05 19:05:14,676 INFO h.d.GuestsDAO [main] Guest ID: 14 -> delete successfully
-2023-06-05 19:05:14,701 INFO h.d.GuestsDAO [main] Guest First Name: Young -> Created successfully!
-2023-06-05 19:05:14,744 INFO h.d.GuestsDAO [main] Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
--> Updated successfully!
-2023-06-05 19:05:14,764 INFO h.Main [main] [Customers {guestID=1, firstName='Carine', lastName='Schmitt', email='Carine@gmail.com', phone='(407) 642-7555'}
-, Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='PeterF@gmail.com', phone='null'}
-, Customers {guestID=4, firstName='Alex', lastName='Williams', email='alex.williams@petsmart.com', phone='null'}
-, Customers {guestID=5, firstName='Julie', lastName='Murphy', email='Julie@yahoo.com', phone='(212) 315-7818'}
-, Customers {guestID=6, firstName='Kwai', lastName='Lee', email='null', phone='(617) 713-8428'}
-, Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
-, Customers {guestID=13, firstName='Mai', lastName='Kim', email='kmai@gmail.com', phone='(813) 238-0958'}
-, Customers {guestID=15, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
-]
-2023-06-06 22:09:14,204 INFO h.Main [main] Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='null', phone='null'}
-
-2023-06-06 22:22:06,323 INFO h.Main [main] Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='null', phone='null'}
-
-2023-06-06 22:22:06,390 INFO h.d.GuestsDAO [main] Guest ID: 16 -> delete successfully
-2023-06-06 22:22:06,414 INFO h.d.GuestsDAO [main] Guest First Name: Young -> Created successfully!
-2023-06-06 22:22:06,457 INFO h.d.GuestsDAO [main] Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
--> Updated successfully!
-2023-06-06 22:22:06,476 INFO h.Main [main] [Customers {guestID=1, firstName='Carine', lastName='Schmitt', email='Carine@gmail.com', phone='(407) 642-7555'}
-, Customers {guestID=2, firstName='Peter', lastName='Ferguson', email='PeterF@gmail.com', phone='null'}
-, Customers {guestID=4, firstName='Alex', lastName='Williams', email='alex.williams@petsmart.com', phone='null'}
-, Customers {guestID=5, firstName='Julie', lastName='Murphy', email='Julie@yahoo.com', phone='(212) 315-7818'}
-, Customers {guestID=6, firstName='Kwai', lastName='Lee', email='null', phone='(617) 713-8428'}
-, Customers {guestID=7, firstName='Alice', lastName='Jeane', email='Alice@gmail.com', phone='(850) 456-2316'}
-, Customers {guestID=13, firstName='Mai', lastName='Kim', email='kmai@gmail.com', phone='(813) 238-0958'}
-, Customers {guestID=15, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
-, Customers {guestID=17, firstName='Young', lastName='Kim', email='ykim@gmail.com', phone='(813) 258-0158'}
-]
-2023-06-06 22:22:06,504 INFO h.d.ReservationsDAO [main] Confirmation#: TMWS-4678450 -> Created successfully!
+2023-06-08 02:53:42,164 INFO h.d.GuestsDAO [main] Guest First Name: Lan -> Created successfully!
+2023-06-08 02:53:42,223 INFO h.d.GuestsDAO [main] Guest ID 15-> Updated successfully!
+2023-06-08 02:53:42,268 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-1587923
+Arrival Date: 2023-01-15
+Departure Date: 2023-01-16
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 104
+------
+2023-06-08 02:53:42,299 INFO h.d.ReservationsDAO [main] Confirmation#: TMWS-7894561-> Updated successfully!
+2023-06-08 02:53:42,319 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-1587923
+Arrival Date: 2023-01-15
+Departure Date: 2023-01-16
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 104
+------
+2023-06-08 02:53:42,320 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-2456105
+Arrival Date: 2023-09-18
+Departure Date: 2023-09-20
+Guest ID: 4
+Room Type ID: QQBL
+Hotel ID: TMWS
+Booking Method ID: 101
+------
+2023-06-08 02:53:42,320 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-4678450
+Arrival Date: 2023-10-12
+Departure Date: 2023-10-15
+Guest ID: 1
+Room Type ID: SK
+Hotel ID: TMWS
+Booking Method ID: 100
+------
+2023-06-08 02:53:42,321 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7456912
+Arrival Date: 2023-11-18
+Departure Date: 2023-11-20
+Guest ID: 6
+Room Type ID: SK
+Hotel ID: TMWS
+Booking Method ID: 103
+------
+2023-06-08 02:53:42,321 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7862349
+Arrival Date: 2024-06-01
+Departure Date: 2024-06-05
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 100
+------
+2023-06-08 02:53:42,321 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7894561
+Arrival Date: 2023-09-11
+Departure Date: 2023-09-15
+Guest ID: 2
+Room Type ID: SQQ
+Hotel ID: TMWS
+Booking Method ID: 100
+------
+2023-06-08 02:56:33,488 INFO h.d.GuestsDAO [main] Guest First Name: Mario -> Created successfully!
+2023-06-08 02:56:33,522 INFO h.d.GuestsDAO [main] Guest ID: 20 -> Delete Successfully
+2023-06-08 02:56:33,559 INFO h.d.GuestsDAO [main] Guest ID 15-> Updated successfully!
+2023-06-08 02:56:33,610 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-1587923
+Arrival Date: 2023-01-15
+Departure Date: 2023-01-16
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 104
+------
+2023-06-08 02:56:33,640 INFO h.d.ReservationsDAO [main] Confirmation#: TMWS-7894561-> Updated successfully!
+2023-06-08 02:56:33,663 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-1587923
+Arrival Date: 2023-01-15
+Departure Date: 2023-01-16
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 104
+------
+2023-06-08 02:56:33,664 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-2456105
+Arrival Date: 2023-09-18
+Departure Date: 2023-09-20
+Guest ID: 4
+Room Type ID: QQBL
+Hotel ID: TMWS
+Booking Method ID: 101
+------
+2023-06-08 02:56:33,665 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-4678450
+Arrival Date: 2023-10-12
+Departure Date: 2023-10-15
+Guest ID: 1
+Room Type ID: SK
+Hotel ID: TMWS
+Booking Method ID: 100
+------
+2023-06-08 02:56:33,665 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7456912
+Arrival Date: 2023-11-18
+Departure Date: 2023-11-20
+Guest ID: 6
+Room Type ID: SK
+Hotel ID: TMWS
+Booking Method ID: 103
+------
+2023-06-08 02:56:33,666 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7862349
+Arrival Date: 2024-06-01
+Departure Date: 2024-06-05
+Guest ID: 5
+Room Type ID: KBW
+Hotel ID: TMWS
+Booking Method ID: 100
+------
+2023-06-08 02:56:33,667 INFO h.d.ReservationsDAO [main] Confirmation Number: TMWS-7894561
+Arrival Date: 2023-09-11
+Departure Date: 2023-09-15
+Guest ID: 2
+Room Type ID: SQQ
+Hotel ID: TMWS
+Booking Method ID: 100
+------
